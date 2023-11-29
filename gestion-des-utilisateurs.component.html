@@ -1,0 +1,61 @@
+<div class="page container">
+<div class="col-xl-12">
+    <app-card  
+    cardTitle="LISTE DES UTILISATEURS"
+    [options]="false"
+    blockClass="table-border-style">
+    <div class="form-group">
+    </div> 
+    <div class="table-responsive">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users let i=index">
+            <th scope="row">{{i+1}}</th>
+             <td> {{ user.nom }}</td>
+             <td> {{ user.prenom }}</td>
+            <td>{{ user.email }}</td> 
+            <button (click)="editUser(user)">Modifier</button>
+            <button (click)="deleteUser(user.id)">Supprimer</button>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</app-card>  
+  </div>
+
+
+
+
+  
+  <!-- Formulaire d'ajout/modification -->
+  <h2>{{ editedUser ? 'Modifier' : 'Ajouter' }} un utilisateur</h2>
+  <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm" novalidate>
+
+    <label for="nom">Nom:</label>
+    <input type="text" id="nom" name="nom" [(ngModel)]="newUser.nom" required minlength="2" pattern="[a-zA-Z ]*">
+    <div *ngIf="submitted && userForm.controls['nom'].hasError('required')">Le nom est requis.</div>
+    <div *ngIf="submitted && userForm.controls['nom'].hasError('minlength')">Le nom doit contenir au moins 2 caractères.</div>
+    <div *ngIf="submitted && userForm.controls['nom'].hasError('pattern')">Le nom doit contenir uniquement des lettres et des espaces.</div>
+
+  
+    <label for="prenom">Prénom:</label>
+    <input type="text" id="prenom" name="prenom" [(ngModel)]="newUser.prenom" required minlength="2" pattern="[a-zA-Z ]*">
+    <div *ngIf="submitted && userForm.controls['prenom'].hasError('required')">Le prénom est requis.</div>
+  <div *ngIf="submitted && userForm.controls['prenom'].hasError('minlength')">Le prénom doit contenir au moins 2 caractères.</div>
+  <div *ngIf="submitted && userForm.controls['prenom'].hasError('pattern')">Le prénom doit contenir uniquement des lettres et des espaces.</div>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="newUser.email" required>
+    <div *ngIf="submitted && userForm.controls['email'].hasError('required')">L'email est requis.</div>
+    <div *ngIf="submitted && userForm.controls['email'].hasError('email')">L'email n'est pas valide.</div>
+  
+    <button type="submit">{{ editedUser ? 'Modifier' : 'Ajouter' }}</button>
+  </form>

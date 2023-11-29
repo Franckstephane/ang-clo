@@ -1,0 +1,62 @@
+.page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  user-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #a81e1e;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .action-buttons {
+    display: flex;
+  }
+  /* Style pour le formulaire d'ajout/modification */
+.user-form {
+    margin-top: 20px;
+  }
+  
+  /* Style pour les champs du formulaire */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Style pour les messages d'erreur */
+  .error-message {
+    color: #ff0000;
+    margin-top: 5px;
+  }
+  
+  /* Style pour le titre */
+  h2 {
+    color: #333;
+  }
+   
