@@ -1,0 +1,102 @@
+
+<div class="col-xl-12">
+  <app-card
+  cardTitle="PRELEVEMENTS"
+  [options]="false"
+  blockClass="table-border-style"
+>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Ref  Webclearing </th>
+          <th>N° Prelevements</th>
+          <th>Clé Rib beneficiaire</th>
+          <th>Numéro Compte_tire</th>
+          <th>N° Compte remetant</th>
+          <th>Nom bénéficiaire</th>
+          <th>Banque remetant</th>
+          <th>Agence Remettant </th>
+          <th>Banque</th>
+          <th>Agence</th>
+          <th> decision Reis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <tr *ngFor="let c of listPrelevements; let i=index">
+            <th scope="row">{{i+1}}</th>
+          <td>{{c.refwclr}}</td>
+          <td>{{c.numeroprelevement}}</td>
+          <td>{{c.cleribbenef}}</td>
+          <td>{{c. numerocompte_Tire}}</td>
+          <td>{{c.compteremettant}}</td>
+          <td>{{c.nom_Beneficiaire}}</td>
+          <td>{{c. banqueremettant}}</td>
+          <td>{{c.agenceremettant}}</td>
+          <td>{{c. banque}}</td>
+          <td>{{c.agence}}</td>
+          <td>{{c. decisionReis}}</td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
+</app-card>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="col-xl-12">
+    <app-card
+    cardTitle="Striped Table"
+    [options]="false"
+    blockClass="table-border-style"
+  >
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+            <tr>
+             <th>#</th>
+             <th>idcheque</th>
+              <th>Titre</th>
+              <th>Contenu</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <tr *ngFor="let post of Posts">
+                <td>#</td>
+              <td>{{post.id}}</td>
+              <td>{{ post.title }}</td>
+              <td>{{ post.body }}</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </app-card>
+</div>  -->
+
+
