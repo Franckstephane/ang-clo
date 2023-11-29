@@ -1,0 +1,46 @@
+
+<div class="col-xl-12">
+    <app-card
+    cardTitle="CHEQUE"
+    [options]="false"
+    blockClass="table-border-style"
+  >
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Ref de Webclearing</th>
+            <th>N° Cheque</th>
+            <th>N° Compte</th>
+            <th>Nom bénéf</th>
+            <th>Banque remettant</th>
+            <th>Agence remettant</th>
+            <th>Type</th>
+            <th>Banque</th>
+            <th>Agence</th>
+            <th>Rib Compte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <tr *ngFor="let c of listCheques; let i=index">
+              <th scope="row">{{i+1}}</th>
+              <td>{{c.refwclr}}</td>
+              <td>{{c.numerocheque}}</td>
+              <td>{{c.numerocompte}}</td>
+              <td>{{c.compteremettant}}</td>
+              <td>{{c.nombeneficiaire}}</td>
+              <td>{{c.banqueremettant}}</td>
+              <td>{{c.agenceremettant}}</td>
+              <td>{{c.type_Cheque}}</td>
+              <td>{{c.banque}}</td>
+              <td>{{c.agence}}</td>
+              <td>{{c.ribcompte}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </app-card>
+</div>
