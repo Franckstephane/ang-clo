@@ -1,0 +1,51 @@
+
+<div class="col-xl-12">
+  <app-card
+  cardTitle="VIREMENTS"
+  [options]="false"
+  blockClass="table-border-style"
+>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Ref  Webclearing </th>
+          <th>N° virements</th>
+          <th>libellé virements</th>
+          <th>N° de compte</th>
+          <th>Clé Rib bénéf</th>
+          <th>Agence</th>
+          <th>Banque</th>
+          <th>Montant</th>
+          <th>Nom tiré</th>
+          <th>Nom bénéficiaire</th>
+          <th>Compte bénéficiaire</th>
+          <th>Agence remetant</th>
+          <th>banque remetant</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <tr *ngFor="let c of listVirements; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{c.refwclr}}</td>
+            <td>{{c. numerovirement}}</td>
+            <td>{{c.  libelle}}</td>
+            <td>{{c. numerocompte_Tire}}</td>
+            <td>{{c. cleribbenef}}</td>
+            <td>{{c.agence}}</td>
+            <td>{{c. banque}}</td>
+            <td>{{c.montantvirement}}</td>
+            <td>{{c. nom_Tire}}</td>
+            <td>{{c.  nom_Beneficiaire}}</td>
+            <td>{{c. numerocompte_Beneficiaire}}</td>
+            <td>{{c.agenceremettant}}</td>
+            <td>{{c. banqueremettant}}</td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
+</app-card>
+</div>
